@@ -1,6 +1,19 @@
-source 'http://rubygems.org'
+source :rubygems
 
-gem 'rails', '3.0.3'
-gem 'sqlite3'
+group :test do
+  gem 'sqlite3'
+  gem 'turn', :require => false
+end
+
+group :assets do
+  gem 'sass-rails'
+  gem 'coffee-rails'
+  gem 'uglifier'
+  gem 'therubyracer'
+end
+
+gem 'rails'
+gem 'jquery-rails'
 gem 'omniauth'
 gem 'omniauth-oauth2'
+
