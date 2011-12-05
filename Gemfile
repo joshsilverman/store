@@ -2,4 +2,5 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.3'
 gem 'sqlite3'
-gem 'omniauth', '0.2.6'
+gem 'omniauth'
+gem 'omniauth-oauth2'
