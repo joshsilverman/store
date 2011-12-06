@@ -1,5 +1,5 @@
 OauthClientDemo::Application.routes.draw do
-  root :to => 'home#index'
+  root :to => 'home#show'
 
   # omniauth
   match '/auth/:provider/callback', :to => 'user_sessions#create'

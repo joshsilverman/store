@@ -7,10 +7,10 @@ module OmniAuth
 
       uid { raw_info['uid'] }
       info { raw_info['info'] }
-      extra { {'admin' => raw_info['admin'], 'raw_info' => raw_info} }
+      extra { {:raw_info => raw_info} }
 
       def raw_info
-        @raw_info ||= access_token.get("/auth/identity/user.json?oauth_token=#{access_token.token}").parsed
+        @raw_info ||= access_token.get("/oauth/user.json?oauth_token=#{access_token.token}").parsed
       end
     end
   end
