@@ -8,5 +8,5 @@ APP_SECRET = 'aqpGBedDnHFyp5MmgT8KErr9D015ScmaY8r3vHg5C0'
 CUSTOM_PROVIDER_URL = 'http://localhost:3000'
 
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :josh_id, APP_ID, APP_SECRET
+  provider :identity, APP_ID, APP_SECRET
 end
