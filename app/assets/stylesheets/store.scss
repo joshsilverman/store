@@ -1,0 +1,231 @@
+.egg_store{
+  .egg_container{ width:297px; float: left; margin: 15px 10px; color:#606060; box-shadow: 0 1px 4px #aaa; border-radius: 3px;
+      .title {padding:8px; background:#F8F8F8; border-bottom: 1px solid #EEE; height:35px; overflow:hidden;
+          h2 { font-weight:bold; color:#004B91;}
+          h2:hover { text-decoration:underline; color:#C60;}
+      }
+      .egg_image{float:left;}
+      .egg_info{float:left; margin: 30px 0 0 15px;}
+      .egg_price{color: #b00000; font-weight: bold;}
+      .review{margin-top:10px; margin-left: -10px;}
+  }
+
+  #search{
+    text-align: center;
+    width:360px;
+    width:932px;
+    margin:20px 10px 10px;
+    background:#FFE25F;
+  /*  box-shadow: 0 1px 4px #ccc;*/
+  /*  border:1px solid #ccc;*/
+    border-radius: 3px;
+    padding:20px 0;
+
+      .inner-search {
+          width:345px;
+          margin:auto;
+
+          #loader {
+              width:32px;
+              height:32px;
+              display: block;
+              margin:0px;
+              float:left;
+          }
+      }
+  }
+  #search_results{width:100%;
+      a{text-decoration: none; color: #606060;}
+      a:hover{text-decoration: none; color: #606060;}
+  }
+
+  #search-box{
+      -webkit-appearance: none;
+      -webkit-font-smoothing: antialiased;
+      border: none;
+      font-size: 18px;
+      padding:4px;
+      width: 292px;
+      font-weight: bold;
+      position: relative;
+      margin-left: 10px;
+      z-index: 10;
+      border: #a0a0a0 1px solid;
+      color:#222;
+  }
+
+  input[type="search"]:-webkit-search-decoration,
+  input[type="search"]:-webkit-search-cancel-button,
+  input[type="search"]:-webkit-search-results-button,
+  input[type="search"]:-webkit-search-results-decoration {
+    display: none;
+  }
+}
+
+.egg_details{
+    .egg_container{width:661px; margin: 10px auto; color:#606060}
+    .egg_container h2{font-size: 28px; font-weight: bold; color: #444444; margin-bottom: 10px;}
+    .egg_container h4{font-size: 20px; margin-bottom: 10px;}
+    .egg_container .egg_image{float:left;}
+    .egg_container .egg_info{float:left; margin: 0; width:550px; padding-top: 20px;}
+    .egg_container .egg_price{color: #b00000;}
+    .egg_container .review{margin-top:10px;}
+    .egg_container .dashed-line{background-image: url("../../images/shared/dashed-line.png"); width:550px; height:10px;}
+    .egg_container .lesson_list{
+        margin-top: 10px;
+        background-color: #d8d8d8;
+        padding:10px;
+        border-top-left-radius: 7px;
+        border-top-right-radius: 7px;}
+
+    .egg_container .lesson_list .header{font-size: 12px; font-weight: bold; color:#cf7006;}
+    .egg_container .lesson_list .table_header{font-size: 12px; font-weight: bold; color:#cf7006;}
+    table {width:550px; margin: 0 -10px -10px -10px; border-width: 0px; border-color: #fff; border-spacing: 1px;}
+    tr, td {border-width: 0px; border-color: #fff; border-spacing: 1px; text-align: center; font-weight: bold;}
+    table tr.d0 td{color:black; background-color: #e4e4e4;}
+    table tr.d1 td{color:black; background-color: #f4f4f4;}
+    table #title{width:200px; color:#cf7006; font-size: 10px; font-weight: bold; text-align: left; padding-left: 10px;}
+    table #questions{width:100px; color:#cf7006; font-size: 10px; font-weight: bold; }
+    table #price{width:50px; color:#cf7006; font-size: 10px; font-weight: bold; }
+    table #buy{width:105px; color:#cf7006; font-size: 10px; font-weight: bold; }
+    table tr td.title_col{text-align: left; padding-left: 10px;}
+}
+
+/***********STAR RATING CSS **************/
+
+.star-rating{
+		list-style:none;
+                line-height: 15px;
+		margin-left:0px !important;
+		padding:0px;
+                padding-bottom: 15px !important;
+		width: 75px;
+		height: 0px;
+		position: relative;
+		background: url(alt_star.gif) top left repeat-x;		
+	}
+	.star-rating li{
+		padding:0px;
+		margin:0px;
+		/*\*/
+		float: left;
+		/* */
+	}
+	.star-rating li a{
+		display:block;
+		width:15px;
+		height: 15px;
+		text-decoration: none;
+		text-indent: -9000px;
+		z-index: 20;
+		position: absolute;
+		padding: 0px;
+	}
+	.star-rating li a:hover{
+		background: url(alt_star.gif) left bottom;
+		z-index: 2;
+		left: 0px;
+	}
+	.star-rating a:focus,
+	.star-rating a:active{
+		border:0;	
+		-moz-outline-style: none;
+    	        outline: none; 
+	}
+	.star-rating a.one-star{
+		left: 0px;
+	}
+	.star-rating a.one-star:hover{
+		width:15px;
+	}
+	.star-rating a.two-stars{
+		left:15px;
+	}
+	.star-rating a.two-stars:hover{
+		width: 30px;
+	}
+	.star-rating a.three-stars{
+		left: 30px;
+	}
+	.star-rating a.three-stars:hover{
+		width: 45px;
+	}
+	.star-rating a.four-stars{
+		left: 45px;
+	}	
+	.star-rating a.four-stars:hover{
+		width: 60px;
+	}
+	.star-rating a.five-stars{
+		left: 60px;
+	}
+	.star-rating a.five-stars:hover{
+		width: 75px;
+	}
+	.star-rating li.current-rating{
+		background: url(alt_star.gif) left center;
+		position: absolute;
+		height: 15px;
+		display: block;
+		text-indent: -9000px;
+		z-index: 1;
+	}
+        
+.static-star-rating{
+		list-style:none;
+                line-height: 15px;
+		margin-left:10px !important;
+		padding:0px;
+                padding-bottom: 15px !important;
+		width: 75px;
+		height: 0px;
+		position: relative;
+		background: url(alt_star.gif) top left repeat-x;
+	}
+	.static-star-rating>li{
+		padding:0px;
+		margin:0px;
+		/*\*/
+		float: left;
+		/* */
+	}
+	.static-star-rating>li>a{
+		display:block;
+		width:15px;
+		height: 15px;
+		text-decoration: none;
+		text-indent: -9000px;
+		z-index: 20;
+		position: absolute;
+		padding: 0px;
+                cursor: default;
+	}
+	.static-star-rating a:focus,
+	.static-star-rating a:active{
+		border:0;	
+		-moz-outline-style: none;
+    	        outline: none; 
+	}
+	.static-star-rating a.one-star{
+		left: 0px;
+	}
+	.static-star-rating a.two-stars{
+		left:15px;
+	}
+	.static-star-rating a.three-stars{
+		left: 30px;
+	}
+	.static-star-rating a.four-stars{
+		left: 45px;
+	}	
+	.static-star-rating a.five-stars{
+		left: 60px;
+	}
+	.static-star-rating li.current-rating{
+		background: url(alt_star.gif) left center;
+		position: absolute;
+		height: 15px;
+		display: block;
+		text-indent: -9000px;
+		z-index: 1;
+	}

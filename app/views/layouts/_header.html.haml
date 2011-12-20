@@ -1,0 +1,21 @@
+#header
+    .shell
+        #head
+            .row-top
+                %h1#logo
+                    %a.notext{:href=>"/"} Logo
+                .usernav
+                    %ul
+                        -if current_user.nil?
+                            %li.first
+                                %a.active{:href=>"http://localhost:3000"} Log In
+                        -else
+                            %li.first
+                                %a{:href=>"#{STUDYEGG_PATH}"} My Eggs
+                            %li
+                                %a.active{:href=>"#{STUDYEGG_STORE_PATH}"} Egg Store
+                            %li
+                                %a{:href=>"#{STUDYEGG_USER_MANAGER_PATH}/users/edit"} Edit Account
+                            %li
+                                %a{:href=>"/logout"} Log Out
+                .cl

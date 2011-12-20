@@ -1,0 +1,41 @@
+.egg_store
+  #search
+    .inner-search
+      #loader
+        %img#mag{:src => "assets/magnifying-glass.png"}
+        %img#load_search{:src => "assets/ajax-loader.gif", :style => "display:none;"}
+      %input#search-box{:placeholder => "Search", :type => "text", :xmlns => "http://www.w3.org/1999/xhtml"}
+
+  #search_results
+    - i=1
+    - @studyeggs.each do |e|
+      %a{:href => "/egg_details/"+e['book']['id'].to_s, :title =>"test"}
+        .egg_container
+          .title
+            %h4 Aligned StudyEgg for:
+            %h2= e['book']['name']
+          %img.egg_image{:src => e['book']['icon_url']}
+          .egg_info
+            %strong Egg Price:
+            %span.egg_price= e['book']['price']
+            %br/
+            %strong Lesson Price:
+            %span.egg_price= e['book']['lesson_price']
+            %br/
+            .review
+              %ul.static-star-rating
+                %li.current-rating{:id=>'current-rating', :style => "width: #{e['book']['rating'].to_f * 15}px"}
+                %li
+                  %a.one-star{:href=>"#", :title=>'1 star out of 5'} 1
+                %li
+                  %a.two-stars{:href=>"#", :title=>'2 stars out of 5'} 2
+                %li
+                  %a.three-stars{:href=>"#", :title=>'3 stars out of 5'} 3
+                %li
+                  %a.four-stars{:href=>"#", :title=>'4 stars out of 5'} 4
+                %li
+                  %a.five-stars{:href=>"#", :title=>'5 stars out of 5'} 5
+      - if i%3==0
+        .cl
+      - i+=1
+  %div{:style => "clear:both"}

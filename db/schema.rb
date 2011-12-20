@@ -11,6 +11,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20111215230752) do
+
+  create_table "lessons", :force => true do |t|
+    t.integer  "price"
+    t.integer  "qb_lesson_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "studyeggs", :force => true do |t|
+    t.integer  "price"
+    t.integer  "qb_studyegg_id"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "total_score",     :default => 0
+    t.integer  "number_of_rates", :default => 0
+  end
 
 end

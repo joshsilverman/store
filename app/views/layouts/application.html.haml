@@ -1,0 +1,41 @@
+%html
+    %head
+        %title StudyEgg | passionate learners
+        = stylesheet_link_tag 'application'
+        = javascript_include_tag 'application'
+        = javascript_include_tag "https://js.stripe.com/v1/"
+        = tag :meta, :name => "stripe-key", :content => 'fake key'#STRIPE_PUBLISH_KEY
+        %meta{:name=>"description", :content=>"StudyEgg automatically creates study guides from your notes and tracks how much you know. Spend less time studying and know your material better with StudyEgg!"}
+        = csrf_meta_tag
+        %link{:rel=>"shortcut icon", :href=>"assets/favicon.ico"}
+    %body
+        = render "layouts/header"
+        .cl
+        #main
+            .shell
+                #content{:class=>"whitebg"}
+                    -unless flash[:notice].blank? && flash[:error].blank? && flash[:alert].blank?
+                        .flash_container
+                            -unless flash[:alert].blank?
+                                .error
+                                    %p= flash[:alert]
+                            -unless flash[:notice].blank?
+                                .notice
+                                    %p= flash[:notice]
+                            -unless flash[:error].blank?
+                                .error
+                                    %p= flash[:error]
+                    = yield
+        .cl
+        = render 'layouts/footer'
+        #script_userecho
+        %script{:type=>"text/javascript"}
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-24416099-1']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();

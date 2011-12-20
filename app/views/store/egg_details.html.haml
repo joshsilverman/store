@@ -1,0 +1,55 @@
+.egg_details
+  .egg_container
+    %img.egg_image{:src=>@studyegg['book']['icon_url']}
+    .egg_info
+      %h4 Aligned StudyEgg for:
+      %h2= @studyegg['book']['name']
+      .review
+        %ul.star-rating
+          %li.current-rating{:id=>'current-rating', :style=>"width: #{@studyegg['book']['rating'].to_f * 15}px"}
+          %li
+            %a.one-star{:href=>'#', :onclick=>"vote(1, #{@studyegg['book']['id']}); return false;", :title=>'1 star out of 5'} 1
+          %li
+            %a.two-stars{:href=>'#', :onclick=>"vote(2, #{@studyegg['book']['id']}); return false;", :title=>'2 stars out of 5'} 2
+          %li
+            %a.three-stars{:href=>'#', :onclick=>"vote(3, #{@studyegg['book']['id']}); return false;", :title=>'3 stars out of 5'} 3
+          %li
+            %a.four-stars{:href=>'#', :onclick=>"vote(4, #{@studyegg['book']['id']}); return false;", :title=>'4 stars out of 5'} 4
+          %li
+            %a.five-stars{:href=>'#', :onclick=>"vote(5, #{@studyegg['book']['id']}); return false;", :title=>'5 stars out of 5'} 5
+      .dashed-line
+      Egg Price:
+      %span.egg_price= @studyegg['book']['price']
+      Lesson Price:
+      %span.egg_price= @studyegg['book']['chapters'][0]['chapter']['lesson_price']
+      %br
+      .lesson_list
+        %span.header Lessons
+        = #@studyegg['book']
+        %table
+          %tr.d0
+            %td#title Title
+            %td#questions= '# of Questions'
+            %td#price Price
+            %td#buy
+          - i=0
+          - unless @studyegg['book']['chapters'].nil?
+            - @studyegg['book']['chapters'].each do |chapter|
+              - if i%2==0
+                %tr.d1
+                  %td.title_col= chapter['chapter']['name']
+                  %td= chapter['chapter']['question_count']
+                  %td= chapter['chapter']['lesson_price']
+                  %td
+                    %span.buy{:id=>chapter['chapter']['id']}
+                      %img{ :src => '/assets/get-it-now.png'}
+              - else
+                %tr.d0
+                  %td.title_col= chapter['chapter']['name']
+                  %td= chapter['chapter']['question_count']
+                  %td= chapter['chapter']['lesson_price']
+                  %td
+                    %span.buy{:id=>chapter['chapter']['id']}
+                      %img{ :src => '/assets/get-it-now.png'}
+              - i+=1
+  .cl

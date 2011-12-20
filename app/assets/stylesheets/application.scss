@@ -1,0 +1,139 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require_self
+ *= require_tree . 
+*/
+
+* { margin: 0; padding: 0; outline: 0; }
+
+@font-face {
+    font-family: 'ITCFranklinGothicLTDemiRg';
+    src: url('fonts/franklingothiclt-demi-webfont.eot');
+    src: url('fonts/franklingothiclt-demi-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/franklingothiclt-demi-webfont.woff') format('woff'),
+         url('fonts/franklingothiclt-demi-webfont.ttf') format('truetype'),
+         url('fonts/franklingothiclt-demi-webfont.svg#ITCFranklinGothicLTDemiRg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body, html { height:100%;}
+
+body { padding:0; margin:0; height:100%; /* background: url(../images/shared/thatch-bg.jpg) repeat 0 0;*/ font-size: 12px; line-height: 20px; font-family: Helvetica, arial, sans-serif; color: #333333; /* background: #dfdacd;*/ }
+img { border: none; }
+a { color: #0252aa; text-decoration: none; cursor: pointer; }
+a:hover { text-decoration: underline; }
+a img { border: 0; }
+.cl { display: block; height: 0; font-size: 0; line-height: 0; text-indent: -4000px; clear: both; }
+.notext { font-size: 0; line-height: 0; text-indent: -4000px; }
+.shell { width:971px; margin: 0 auto; padding-top: 15px;}
+
+#header { background: #218dd2; border-bottom: 1px solid #0066b2;
+    #head {padding: 2px 0; position: relative;
+        h1#logo { width: 150px; height: 39px; float: left; display: inline;
+            a {background: url(application/logo-small.gif) no-repeat 0 0; height: 40px; display: block;margin-top: 1px; }
+        }
+    }
+}
+
+
+.login { float: right; display: inline; width: 252px; margin-top: 6px; position: relative; z-index: 4; 
+    a.login-link { background: url(../images/home/login-down.png) no-repeat right 0; height: 24px; line-height: 24px; padding: 0 31px 0 0; margin-right: 16px; display: block; }
+    a.login-link { font-size: 18px; font-weight: 500; color: #fff; text-align: right; }
+    a:hover { text-decoration: none; }
+}
+
+.dd { position: absolute; top: -4px; right: 0; width: 252px; display: none; z-index: 3;
+    .cnt-top { background: url(../images/home/cnt-top.png) no-repeat 0 0; padding-top: 39px; }
+    .cnt-bottom { background: url(../images/home/cnt-bottom.png) no-repeat 0 bottom; padding-bottom: 22px; }
+    .cnt { padding: 1px 15px 0 14px;
+        a.login-link-hr { background: url(../images/home/login-up.png) no-repeat right 0; height: 24px; padding: 0 31px 0 0; margin-top: -36px; display: block; float: right; }
+        a.login-link-hr { font-size: 18px; font-weight: bold; color: #fff; line-height: 24px; }
+        input { color: #cccccc; font-size: 14px; }
+        input.field { background: #fff; border: solid 1px #ccc; width: 200px; height: 32px; margin-bottom: 6px; padding: 0 10px; line-height: 32px; }
+        input.button { background: url(../images/home/login-button.jpg) no-repeat 0 0; border: 0; width: 102px; height: 36px; cursor: pointer; float:right; display: block; margin-top: 3px; }
+        input#check { margin: 10px 5px 0 5px; }
+        p { text-align: center; padding: 10px 0 0 0; }
+        a.dd-link { color: #333; }
+    }
+}
+
+    
+#footer {background: #004578; border-top: 2px solid #218dd2; -moz-box-shadow: 0 0 5px #666; -webkit-box-shadow: 0 0 5px #666;
+         box-shadow: 0 0 5px #666; behavior: url(ie-css3.htc); clear: both; position: relative; height: 110px;
+         margin-top: 10px;
+  
+    .shell { padding: 10px 0 0px 0; width: 971px; }
+    h4 { color: #fff; }
+    ul { list-style: none; margin-top: 3px;
+        li { display: block; color: #dfdacd; line-height: 18px;
+            a { color: #dfdacd; }
+            }
+        }
+    .links { float: left; display: inline; padding-right: 90px;
+        p { text-align: left; font-size: 12px; color: #dfdacd; }
+        }
+    .address { float: left; display: inline; padding-right: 130px; }
+    .social { float: right; display: inline;
+        a { float: left; display: inline; font-size: 0; line-height: 0; text-indent: -4000px; }
+        a.twitter-link { background: url(application/twitter-icon.png) no-repeat 0 0; width: 35px; height: 44px; padding: 0 19px 0 0; margin-top: 3px; }
+        a.facebook-link { background: url(application/facebook-icon.png) no-repeat 0 0; width: 21px; height: 44px; }
+        a.google-link { background: url(application/google-icon.jpg) no-repeat 0 0; width: 43px; height: 44px; }
+        }
+    .bottom { margin-top: -20px;
+        p { text-align: right; font-size: 12px; color: #0066b2; }
+    }
+}
+
+.usernav { float: right; display: inline; margin: 5px 16px 0 0; position: relative; text-align: right; z-index: 4; 
+    ul { list-style: none; margin-top: 5px;
+        li { border-left: 1px solid #ccc; display: inline; margin-left: 10px; padding: 4px 0 2px 10px; }
+        li.first { border: none; }
+    }
+    a { color: #fff; font-size: 16px; font-weight: 500; text-align: right; text-decoration: none; padding: 7px 10px; }
+    a:hover{text-decoration: none; padding: 7px 10px; }
+    a.active {
+        background: #85ccfa;
+        border-radius: 3px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 3px;
+        /*  border:1px solid #ccc;*/
+    }
+}
+.flash_container p { text-align: center; padding: 5px;}
+
+.notice {
+    background-color:#4DD64D;
+    border-radius: 10px;
+    border-bottom: 1px solid #28A928;
+    margin: 5px -30px 10px -30px;
+    padding:3px;
+}
+
+.error {
+    background-color:#FF734D;
+    border-radius: 10px;
+    border-bottom: 1px solid #d22b21;
+    margin: 5px -30px 10px -30px;
+    padding:3px;
+}
+
+.alert {
+    background-color: #fffba8;
+    border-radius: 10px;
+    border-bottom: 1px solid #d22b21;
+    margin: 5px -30px 10px -30px;
+    padding:3px;
+}
+
+.copyright {
+    color:#383838;
+    padding:15px 0 -25px;
+    margin: 0 10px;
+    float:left;
+    clear:left;
+    position:relative;
+    top: -10px;
+}
