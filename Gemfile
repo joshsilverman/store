@@ -5,6 +5,10 @@ group :test do
   gem 'turn', :require => false
 end
 
+group :production do
+  gem 'pg', :require => false
+end
+
 group :assets do
   gem 'sass-rails'
   gem 'coffee-rails'
