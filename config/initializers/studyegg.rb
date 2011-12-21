@@ -1,9 +1,8 @@
-#STUDYEGG_PATH = "http://localhost:3003"
-#STUDYEGG_STORE_PATH = "http://localhost:3002"
-#STUDYEGG_QUESTIONS_PATH = "http://localhost:3001"
-#STUDYEGG_USER_MANAGER_PATH = "http://localhost:3000"
+studyegg_config_file = File.join(Rails.root,'config','studyegg.yml')
+raise "#{studyegg_config_file} is missing!" unless File.exists? studyegg_config_file
+studyegg_config = YAML.load_file(studyegg_config_file)[Rails.env].symbolize_keys
 
-STUDYEGG_PATH = "http://studyegg.heroku.com"
-STUDYEGG_STORE_PATH = "http://studyegg-store.heroku.com"
-STUDYEGG_QUESTIONS_PATH = "http://studyegg-qb.heroku.com"
-STUDYEGG_USER_MANAGER_PATH = "http://auth-provider.heroku.com"
+STUDYEGG_PATH = studyegg_config[:studyegg]
+STUDYEGG_STORE_PATH = studyegg_config[:store]
+STUDYEGG_QUESTIONS_PATH = studyegg_config[:qb]
+STUDYEGG_USER_MANAGER_PATH = studyegg_config[:auth]

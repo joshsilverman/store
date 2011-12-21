@@ -3,7 +3,11 @@ require 'omniauth/strategies/oauth2'
 module OmniAuth
   module Strategies
     class Identity < OmniAuth::Strategies::OAuth2
-      option :client_options, { :site => 'http://auth-provider.heroku.com' }
+      studyegg_config_file = File.join(Rails.root,'config','studyegg.yml')
+      raise "#{studyegg_config_file} is missing!" unless File.exists? studyegg_config_file
+      studyegg_config = YAML.load_file(studyegg_config_file)[Rails.env].symbolize_keys
+      
+      option :client_options, { :site => studyegg_config[:auth] }
 
       uid { raw_info['uid'] }
       info { raw_info['info'] }

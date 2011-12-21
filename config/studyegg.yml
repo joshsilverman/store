@@ -1,0 +1,20 @@
+development:
+  domain: localhost
+  auth: http://localhost:3000
+  qb: http://localhost:3001
+  store: http://localhost:3002
+  studyegg: http://localhost:3003
+
+test:
+  domain: localhost
+  auth: http://localhost:3000
+  qb: http://localhost:3001
+  store: http://localhost:3002
+  studyegg: http://localhost:3003
+
+production:
+  domain: .studyegg.com
+  auth: http://myaccount.studyegg.com
+  qb: http://questionbase.studyegg.com
+  store: http://store.studyegg.com
+  studyegg: http://studyegg.studyegg.com
