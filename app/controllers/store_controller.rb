@@ -16,19 +16,19 @@ class StoreController < ApplicationController
     end
     @studyeggs = JSON.parse(res.body)
     @studyeggs.each do |s|
-      egg = Studyegg.find_by_qb_studyegg_id(s['book']['id'])
-      lesson_price = Lesson.find_by_id(s['book']['chapters'][0]['chapter']['id']).price
-      s['book']['rating'] = egg.total_score*1.0/egg.number_of_rates
+      egg = Studyegg.find_by_qb_studyegg_id(s['id'])
+      lesson_price = Lesson.find_by_id(s['chapters'][0]['id']).price
+      s['rating'] = egg.total_score*1.0/egg.number_of_rates
       if egg.price == 0
-        s['book']['price'] = "Free"
+        s['price'] = "Free"
       else
-        s['book']['price'] = "$"+sprintf("%.2f", egg.price*1.0/100).to_s
+        s['price'] = "$"+sprintf("%.2f", egg.price*1.0/100).to_s
       end
       
       if lesson_price == 0
-        s['book']['lesson_price'] = "Free"
+        s['lesson_price'] = "Free"
       else
-        s['book']['lesson_price'] = "$"+sprintf("%.2f", lesson_price*1.0/100).to_s
+        s['lesson_price'] = "$"+sprintf("%.2f", lesson_price*1.0/100).to_s
       end
     end
     puts "THIS IS WHAT WE GOT BACK: #{@studyeggs[0]}"
@@ -42,21 +42,21 @@ class StoreController < ApplicationController
     }
     puts res.body
     @studyegg = JSON.parse(res.body)
-    egg = Studyegg.find_by_qb_studyegg_id(@studyegg['book']['id'])
+    egg = Studyegg.find_by_qb_studyegg_id(@studyegg['id'])
     
     if egg.price == 0
-      @studyegg['book']['price'] = "Free"
+      @studyegg['price'] = "Free"
     else
-      @studyegg['book']['price'] = "$"+sprintf("%.2f", egg.price*1.0/100).to_s
+      @studyegg['price'] = "$"+sprintf("%.2f", egg.price*1.0/100).to_s
     end
-    @studyegg['book']['rating'] = egg.total_score*1.0/egg.number_of_rates
+    @studyegg['rating'] = egg.total_score*1.0/egg.number_of_rates
     
-    @studyegg['book']['chapters'].each do |ch|
-      lesson_price = Lesson.find_by_id(ch['chapter']['id']).price
+    @studyegg['chapters'].each do |ch|
+      lesson_price = Lesson.find_by_id(ch['id']).price
       if lesson_price == 0
-        ch['chapter']['lesson_price'] = "Free"
+        ch['lesson_price'] = "Free"
       else
-        ch['chapter']['lesson_price'] = "$"+sprintf("%.2f", lesson_price*1.0/100).to_s
+        ch['lesson_price'] = "$"+sprintf("%.2f", lesson_price*1.0/100).to_s
       end
     end
   end

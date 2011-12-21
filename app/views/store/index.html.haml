@@ -9,22 +9,22 @@
   #search_results
     - i=1
     - @studyeggs.each do |e|
-      %a{:href => "/egg_details/"+e['book']['id'].to_s, :title =>"test"}
+      %a{:href => "/egg_details/"+e['id'].to_s, :title =>"test"}
         .egg_container
           .title
             %h4 Aligned StudyEgg for:
-            %h2= e['book']['name']
-          %img.egg_image{:src => e['book']['icon_url']}
+            %h2= e['name']
+          %img.egg_image{:src => e['icon_url']}
           .egg_info
             %strong Egg Price:
-            %span.egg_price= e['book']['price']
+            %span.egg_price= e['price']
             %br/
             %strong Lesson Price:
-            %span.egg_price= e['book']['lesson_price']
+            %span.egg_price= e['lesson_price']
             %br/
             .review
               %ul.static-star-rating
-                %li.current-rating{:id=>'current-rating', :style => "width: #{e['book']['rating'].to_f * 15}px"}
+                %li.current-rating{:id=>'current-rating', :style => "width: #{e['rating'].to_f * 15}px"}
                 %li
                   %a.one-star{:href=>"#", :title=>'1 star out of 5'} 1
                 %li
