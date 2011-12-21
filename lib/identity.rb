@@ -3,7 +3,7 @@ require 'omniauth/strategies/oauth2'
 module OmniAuth
   module Strategies
     class Identity < OmniAuth::Strategies::OAuth2
-      option :client_options, { :site => STUDYEGG_USER_MANAGER_PATH }
+      option :client_options, { :site => 'http://auth-provider.heroku.com' }
 
       uid { raw_info['uid'] }
       info { raw_info['info'] }
