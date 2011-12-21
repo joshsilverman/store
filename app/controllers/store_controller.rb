@@ -5,16 +5,17 @@ class StoreController < ApplicationController
   before_filter :login_required, :except => ["index"]
   def index
     eggs = Studyegg.select(:id).collect(&:id).join("+")
+    url = URI.parse(STUDYEGG_QUESTIONS_PATH+"/api-V1/get_books/#{eggs}.json")
+    req = Net::HTTP::Get.new(url.path)
+    res = Net::HTTP.start(url.host, url.port) {|http|
+      http.request(req)
+    }
     begin
-      url = URI.parse(STUDYEGG_QUESTIONS_PATH+"/api-V1/get_books/#{eggs}.json")
-      req = Net::HTTP::Get.new(url.path)
-      res = Net::HTTP.start(url.host, url.port) {|http|
-        http.request(req)
-      }
+      @studyeggs = JSON.parse(res.body)
     rescue
       @studyeggs=nil
     end
-    @studyeggs = JSON.parse(res.body)
+
     @studyeggs.each do |s|
       egg = Studyegg.find_by_qb_studyegg_id(s['id'])
       lesson_price = Lesson.find_by_id(s['chapters'][0]['id']).price
