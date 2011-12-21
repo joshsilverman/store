@@ -8,7 +8,7 @@
                     %ul
                         -if current_user.nil?
                             %li.first
-                                %a.active{:href=>"http://localhost:3000"} Log In
+                                %a.active{:href=>"#{STUDYEGG_USER_MANAGER_PATH}"} Log In
                         -else
                             %li.first
                                 %a{:href=>"#{STUDYEGG_PATH}"} My Eggs
