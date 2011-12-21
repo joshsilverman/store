@@ -13,7 +13,7 @@ class StoreController < ApplicationController
     begin
       @studyeggs = JSON.parse(res.body)
     rescue
-      @studyeggs=nil
+      @studyeggs=[]
     end
 
     @studyeggs.each do |s|
