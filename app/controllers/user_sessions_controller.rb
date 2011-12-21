@@ -23,6 +23,6 @@ class UserSessionsController < ApplicationController
     session[:user] = nil
 
 #    flash[:notice] = 'You have successfully signed out!'
-    redirect_to "#{CUSTOM_PROVIDER_URL}/users/sign_out"
+    redirect_to "#{STUDYEGG_USER_MANAGER_PATH}/users/sign_out"
   end
 end
