@@ -1,20 +1,8 @@
-require 'net/http'
-require 'uri'
-
 class StoreController < ApplicationController
   before_filter :login_required, :except => ["index"]
   def index
-    eggs = Studyegg.select(:id).collect(&:id).join("+")
-    url = URI.parse(STUDYEGG_QUESTIONS_PATH+"/api-V1/get_books/#{eggs}.json")
-    req = Net::HTTP::Get.new(url.path)
-    res = Net::HTTP.start(url.host, url.port) {|http|
-      http.request(req)
-    }
-    begin
-      @studyeggs = JSON.parse(res.body)
-    rescue
-      @studyeggs=[]
-    end
+    eggs = Studyegg.select(:id).collect(&:id)
+    @studyeggs = Questionbase.get_studyeggs(eggs)
 
     @studyeggs.each do |s|
       egg = Studyegg.find_by_qb_studyegg_id(s['id'])
@@ -36,13 +24,7 @@ class StoreController < ApplicationController
   end
 
   def egg_details
-    url = URI.parse(STUDYEGG_QUESTIONS_PATH+'/api-V1/get_book_details/'+params[:id]+'.json')
-    req = Net::HTTP::Get.new(url.path)
-    res = Net::HTTP.start(url.host, url.port) {|http|
-      http.request(req)
-    }
-    puts res.body
-    @studyegg = JSON.parse(res.body)
+    @studyegg = Questionbase.get_studyegg_details(params[:id])
     egg = Studyegg.find_by_qb_studyegg_id(@studyegg['id'])
     
     if egg.price == 0
@@ -64,8 +46,12 @@ class StoreController < ApplicationController
   
   def search
     q = params[:q]
-    query = Tag.joins(:documents).select(['tags.*', 'MIN(documents.price) as doc_price']).where("(tags.name LIKE ? OR documents.name LIKE ?)", '%'+q+'%', '%'+q+'%').group('tags.id').limit(50)
-    query = query.to_json()
+    query = #search API call to qb
     render :text => query
+  end
+  
+  def publish
+    @studyegg = Questionbase.get_publishable()
+    
   end
 end

@@ -1,0 +1,55 @@
+.egg_details
+  .egg_container
+    %img.egg_image{:src=>@studyegg['icon_url']}
+    .egg_info
+      %h4 Aligned StudyEgg for:
+      %h2= @studyegg['name']
+      .review
+        %ul.star-rating
+          %li.current-rating{:id=>'current-rating', :style=>"width: 30px"}
+          %li
+            %a.one-star{:href=>'#', :onclick=>"vote(1, #{@studyegg['id']}); return false;", :title=>'1 star out of 5'} 1
+          %li
+            %a.two-stars{:href=>'#', :onclick=>"vote(2, #{@studyegg['id']}); return false;", :title=>'2 stars out of 5'} 2
+          %li
+            %a.three-stars{:href=>'#', :onclick=>"vote(3, #{@studyegg['id']}); return false;", :title=>'3 stars out of 5'} 3
+          %li
+            %a.four-stars{:href=>'#', :onclick=>"vote(4, #{@studyegg['id']}); return false;", :title=>'4 stars out of 5'} 4
+          %li
+            %a.five-stars{:href=>'#', :onclick=>"vote(5, #{@studyegg['id']}); return false;", :title=>'5 stars out of 5'} 5
+      .dashed-line
+      Egg Price:
+      %span.egg_price
+      Lesson Price:
+      %span.egg_price
+      %br
+      .lesson_list
+        %span.header Lessons
+        = #@studyegg
+        %table
+          %tr.d0
+            %td#title Title
+            %td#questions= '# of Questions'
+            %td#price Price
+            %td#buy
+          - i=0
+          - unless @studyegg['chapters'].nil?
+            - @studyegg['chapters'].each do |chapter|
+              - if i%2==0
+                %tr.d1
+                  %td.title_col= chapter['name']
+                  %td= chapter['question_count']
+                  %td
+                  %td
+                    %span.buy{:id=>chapter['id']}
+                      %img{ :src => '/assets/get-it-now.png'}
+              - else
+                %tr.d0
+                  %td.title_col= chapter['name']
+                  %td= chapter['question_count']
+                  %td
+                  %td
+                    %span.buy{:id=>chapter['id']}
+                      %img{ :src => '/assets/get-it-now.png'}
+              - i+=1
+  .cl
