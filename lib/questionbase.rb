@@ -48,8 +48,8 @@ class Questionbase
     return studyeggs
   end
   
-  def self.get_publishable
-    url = URI.parse(STUDYEGG_QUESTIONS_PATH+"/api-V1/get_publishable.json")
+  def self.get_public
+    url = URI.parse(STUDYEGG_QUESTIONS_PATH+"/api-V1/get_public.json")
     req = Net::HTTP::Get.new(url.path)
     res = Net::HTTP.start(url.host, url.port) {|http|
       http.request(req)
