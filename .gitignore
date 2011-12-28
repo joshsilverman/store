@@ -15,4 +15,5 @@
 /tmp
 
 /config/database.yml
-
+.gitignore
+/nbproject/*
