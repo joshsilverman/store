@@ -28,8 +28,9 @@ class StoreController < ApplicationController
   def egg_details
     @studyegg_path = STUDYEGG_PATH
     @studyegg = Questionbase.get_studyegg_details(params[:id])
+    puts "Studyegg Returned by QB: #{@studyegg}"
     egg = Studyegg.find_or_create_by_qb_studyegg_id(@studyegg['id'])
-    
+    puts "Egg found or created by store: #{egg}"
     if egg.price == 0 or egg.price.nil?
       @studyegg['price'] = "Free"
     else
