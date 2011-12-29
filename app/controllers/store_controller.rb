@@ -3,8 +3,6 @@ class StoreController < ApplicationController
   def index
     #eggs = Studyegg.select(:id).collect(&:id)
     @studyeggs = Questionbase.get_public
-    
-    puts "Returned public eggs: #{@studyeggs}"
 
     @studyeggs.each do |s|
       egg = Studyegg.find_or_create_by_qb_studyegg_id(s['id'])
@@ -28,9 +26,7 @@ class StoreController < ApplicationController
   def egg_details
     @studyegg_path = STUDYEGG_PATH
     @studyegg = Questionbase.get_studyegg_details(params[:id])
-    puts "Studyegg Returned by QB: #{@studyegg}"
     egg = Studyegg.find_or_create_by_qb_studyegg_id(@studyegg['id'])
-    puts "Egg found or created by store: #{egg}"
     if egg.price == 0 or egg.price.nil?
       @studyegg['price'] = "Free"
     else
@@ -39,7 +35,7 @@ class StoreController < ApplicationController
     @studyegg['rating'] = egg.total_score*1.0/egg.number_of_rates
     
     @studyegg['chapters'].each do |ch|
-      lesson_price = Lesson.find_by_id(ch['id']).price
+      lesson_price = Lesson.find_or_create_by_qb_lesson_id(ch['id']).price
       if lesson_price == 0 or lesson_price.nil?
         ch['lesson_price'] = "Free"
       else
