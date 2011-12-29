@@ -3,6 +3,8 @@ class StoreController < ApplicationController
   def index
     #eggs = Studyegg.select(:id).collect(&:id)
     @studyeggs = Questionbase.get_public
+    
+    puts "Returned public eggs: #{@studyeggs}"
 
     @studyeggs.each do |s|
       egg = Studyegg.find_or_create_by_qb_studyegg_id(s['id'])
