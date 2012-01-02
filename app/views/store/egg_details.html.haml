@@ -51,6 +51,7 @@
                   %td= chapter['lesson_price']
                   %td
                     %span.buy{:id=>chapter['id']}
-                      %img{ :src => '/assets/get-it-now.png'}
+                      %a{:href=>@studyegg_path+'/create_usership/'+chapter['id'].to_s}
+                        %img{ :src => '/assets/get-it-now.png'}
               - i+=1
   .cl
