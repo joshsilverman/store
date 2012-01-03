@@ -28,7 +28,7 @@ a:hover { text-decoration: underline; }
 a img { border: 0; }
 .cl { display: block; height: 0; font-size: 0; line-height: 0; text-indent: -4000px; clear: both; }
 .notext { font-size: 0; line-height: 0; text-indent: -4000px; }
-.shell { width:971px; margin: 0 auto; padding-top: 15px;}
+.shell { width:971px; margin: 0 auto;}
 
 #header { background: #218dd2; border-bottom: 1px solid #0066b2;
     #head {padding: 2px 0; position: relative;
@@ -87,21 +87,29 @@ a img { border: 0; }
     }
 }
 
-.usernav { float: right; display: inline; margin: 5px 16px 0 0; position: relative; text-align: right; z-index: 4; 
-    ul { list-style: none; margin-top: 5px;
-        li { border-left: 1px solid #ccc; display: inline; margin-left: 10px; padding: 4px 0 2px 10px; }
-        li.first { border: none; }
+.usernav { float: right; display: inline; margin: 5px 0 0 0; position: relative; text-align: right; z-index: 4; right:0px; 
+  ul { 
+    background: #09639C;
+    border-radius: 3px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 3px;
+    list-style: none;
+    margin-top: 1px;
+    padding: 4px 3px 2px 3px;
+    float:right;
+
+    li {  display: inline; margin-left: 0px; 
+      a {color:#85ccfa; border-left: 1px solid #bbb;}
+      a:hover {color:#CFECFF;}
     }
-    a { color: #fff; font-size: 16px; font-weight: 500; text-align: right; text-decoration: none; padding: 7px 10px; }
-    a:hover{text-decoration: none; padding: 7px 10px; }
-    a.active {
-        background: #85ccfa;
-        border-radius: 3px;
-        -moz-border-radius: 5px;
-        -webkit-border-radius: 3px;
-        /*  border:1px solid #ccc;*/
-    }
+  }
+  .first { border: none;}
+  a { color: #F0F9FF; font-size: 16px; font-weight: 500; text-align: right; text-decoration: none; padding: 0px 10px; }
+  a:hover{color:#fff;}
+  a.active {}
+  & > a {float:left; position:relative; top:5px; border-left: 1px solid #bbb; padding: 0px 10px; }
 }
+
 .flash_container p { text-align: center; padding: 5px;}
 
 .notice {
