@@ -77,10 +77,10 @@
         padding:10px;
         border-top-left-radius: 7px;
         border-top-right-radius: 7px;}
-
-    .egg_container .lesson_list .header{font-size: 12px; font-weight: bold; color:#cf7006;}
-    .egg_container .lesson_list .table_header{font-size: 12px; font-weight: bold; color:#cf7006;}
-    table {width:550px; margin: 0 -10px -10px -10px; border-width: 0px; border-color: #fff; border-spacing: 1px;}
+    .egg_container .lesson_list .get_all_lessons{text-align:right; display: block; float:right;}
+    .egg_container .lesson_list .header{font-size: 12px; font-weight: bold; color:#cf7006; display: block; float:left; padding:0 0 10px 0}
+    .egg_container .lesson_list .table_header{font-size: 12px; font-weight: bold; color:#cf7006; padding:3px 0}
+    table {width:550px; font-size: 12px;margin: 0 -10px -10px -10px; border-width: 0px; border-color: #fff; border-spacing: 1px;}
     tr, td {border-width: 0px; border-color: #fff; border-spacing: 1px; text-align: center; font-weight: bold;}
     table tr.d0 td{color:black; background-color: #e4e4e4;}
     table tr.d1 td{color:black; background-color: #f4f4f4;}

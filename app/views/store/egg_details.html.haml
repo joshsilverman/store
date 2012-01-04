@@ -25,6 +25,8 @@
       %br
       .lesson_list
         %span.header Lessons
+        %a.get_all_lessons{:href=>@studyegg_path+'/create_userships_for_studyegg/'+@studyegg['id'].to_s}
+          Add all lessons to 'My Eggs'
         = #@studyegg
         %table
           %tr.d0
