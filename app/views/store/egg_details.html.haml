@@ -37,23 +37,32 @@
           - i=0
           - unless @studyegg['chapters'].nil?
             - @studyegg['chapters'].each do |chapter|
+              -owned = false
+              -@userships.each do |u|
+                -owned = true if u['id'].to_i == chapter['id'].to_i
               - if i%2==0
                 %tr.d1
                   %td.title_col= chapter['name']
                   %td= chapter['question_count']
                   %td= chapter['lesson_price']
                   %td
-                    %span.buy{:id=>chapter['id']}
-                      %a{:href=>@studyegg_path+'/create_usership/'+chapter['id'].to_s}
-                        %img{ :src => '/assets/get-it-now.png'}
+                    -if owned
+                      %a{:href=>@studyegg_path+'/review/'+chapter['id'].to_s} Review Now!
+                    -else
+                      %span.buy{:id=>chapter['id']}
+                        %a{:href=>@studyegg_path+'/create_usership/'+chapter['id'].to_s}
+                          %img{ :src => '/assets/get-it-now.png'}
               - else
                 %tr.d0
                   %td.title_col= chapter['name']
                   %td= chapter['question_count']
                   %td= chapter['lesson_price']
                   %td
-                    %span.buy{:id=>chapter['id']}
-                      %a{:href=>@studyegg_path+'/create_usership/'+chapter['id'].to_s}
-                        %img{ :src => '/assets/get-it-now.png'}
+                    -if owned
+                      %a{:href=>@studyegg_path+'/review/'+chapter['id'].to_s} Review Now!
+                    -else
+                      %span.buy{:id=>chapter['id']}
+                        %a{:href=>@studyegg_path+'/create_usership/'+chapter['id'].to_s}
+                          %img{ :src => '/assets/get-it-now.png'}
               - i+=1
   .cl

@@ -25,6 +25,7 @@ class StoreController < ApplicationController
 
   def egg_details
     @studyegg_path = STUDYEGG_PATH
+    @userships = Questionbase.get_userships(current_user.uid) if current_user
     @studyegg = Questionbase.get_studyegg_details(params[:id])
     egg = Studyegg.find_or_create_by_qb_studyegg_id(@studyegg['id'])
     if egg.price == 0 or egg.price.nil?
