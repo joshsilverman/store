@@ -1,4 +1,5 @@
-.egg_store{margin-right:-16px;
+.egg_store{
+  margin-right:-16px;
   .egg_container{ width:308px; float: left; margin:15px 20px 15px 1px; color:#606060; box-shadow: 0 1px 4px #aaa; border-radius: 3px;
       .title {padding:8px; background:#F8F8F8; border-bottom: 1px solid #EEE; height:35px; overflow:hidden;
           h2 { font-weight:bold; color:#004B91;}
@@ -63,6 +64,8 @@
 }
 
 .egg_details {
+  margin-top:27px;
+  
   .egg_info {
      width:62%;
      float:left; 
@@ -84,7 +87,7 @@
 
       .title {
 /*        border-bottom: #E3E3E3 solid 1px;*/
-        background: D6D6D6;
+        background: #D6D6D6;
         
         .header {
           font-size: 16px;
@@ -136,33 +139,7 @@
   }
   
   .aside {
-    width:36%;
-/*    margin-top:69px;*/
     margin-top:64px;
-    margin-left:2%;
-    height:200px;
-    float:right;
-    color: #606060;
-    box-shadow: 0 1px .62em #AAA;
-    font-size:20px;
-    border-radius: .31em;
-    
-    .title {
-      padding: .62em;
-      background: #F8F8F8;
-      border-bottom: 1px solid #EEE;
-      overflow: hidden;
-      border-radius: .62em .62em 0px 0px;
-    }
-    
-    .body {
-      font-size:16px;
-      line-height:1.62em;
-      padding:1em;
-      color:#444;
-      
-      p {padding:.32em 0;}
-    }
   }
 }
 
