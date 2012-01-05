@@ -1,35 +1,32 @@
 .egg_details
   .egg_container
-    %img.egg_image{:src=>@studyegg['icon_url']}
     .egg_info
-      %h4 Aligned StudyEgg for:
+      //%img.egg_image{:src=>@studyegg['icon_url']}
+      %h4 The StudyEgg for:
       %h2= @studyegg['name']
       .review
-        %ul.star-rating
-          %li.current-rating{:id=>'current-rating', :style=>"width: #{@studyegg['rating'].to_f * 15}px"}
-          %li
-            %a.one-star{:href=>'#', :onclick=>"vote(1, #{@studyegg['id']}); return false;", :title=>'1 star out of 5'} 1
-          %li
-            %a.two-stars{:href=>'#', :onclick=>"vote(2, #{@studyegg['id']}); return false;", :title=>'2 stars out of 5'} 2
-          %li
-            %a.three-stars{:href=>'#', :onclick=>"vote(3, #{@studyegg['id']}); return false;", :title=>'3 stars out of 5'} 3
-          %li
-            %a.four-stars{:href=>'#', :onclick=>"vote(4, #{@studyegg['id']}); return false;", :title=>'4 stars out of 5'} 4
-          %li
-            %a.five-stars{:href=>'#', :onclick=>"vote(5, #{@studyegg['id']}); return false;", :title=>'5 stars out of 5'} 5
-      .dashed-line
-      Egg Price:
-      %span.egg_price= @studyegg['price']
-      Lesson Price:
-      %span.egg_price= @studyegg['chapters'][0]['lesson_price']
-      %br
+        //%ul.star-rating
+        //  %li.current-rating{:id=>'current-rating', :style=>"width: #{@studyegg['rating'].to_f * 15}px"}
+        //  %li
+        //    %a.one-star{:href=>'#', :onclick=>"vote(1, #{@studyegg['id']}); return false;", :title=>'1 star out of 5'} 1
+        //  %li
+        //    %a.two-stars{:href=>'#', :onclick=>"vote(2, #{@studyegg['id']}); return false;", :title=>'2 stars out of 5'} 2
+        //  %li
+        //    %a.three-stars{:href=>'#', :onclick=>"vote(3, #{@studyegg['id']}); return false;", :title=>'3 stars out of 5'} 3
+        //  %li
+        //    %a.four-stars{:href=>'#', :onclick=>"vote(4, #{@studyegg['id']}); return false;", :title=>'4 stars out of 5'} 4
+        //  %li
+        //    %a.five-stars{:href=>'#', :onclick=>"vote(5, #{@studyegg['id']}); return false;", :title=>'5 stars out of 5'} 5
       .lesson_list
-        %span.header Lessons
+        .title
+          %span.header Lessons
+          //%a.get_all_lessons{:href=>@studyegg_path+'/create_userships_for_studyegg/'+@studyegg['id'].to_s}
+          //  Add all lessons to 'My Eggs'
         = #@studyegg
         %table
           %tr.d0
             %td#title Title
-            %td#questions= '# of Questions'
+            %td#questions= 'Questions'
             %td#price Price
             %td#buy
           - i=0
@@ -51,6 +48,13 @@
                   %td= chapter['lesson_price']
                   %td
                     %span.buy{:id=>chapter['id']}
-                      %img{ :src => '/assets/get-it-now.png'}
+                      %a{:href=>@studyegg_path+'/create_usership/'+chapter['id'].to_s}
+                        %img{ :src => '/assets/get-it-now.png'}
               - i+=1
+    .aside 
+      .title
+        Getting started...
+      .body
+        Find your chapter and click "Add to My Eggs."
+        Then, click "Review" to begin.
   .cl

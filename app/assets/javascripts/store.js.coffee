@@ -13,7 +13,7 @@ $ ->
         viewportY = $(window).height()
         console.log(viewportY)
         
-        difference = viewportY - footerY - headerY - 13;
+        difference = viewportY - footerY - headerY - 33;
 
         newContentsY = difference;
 

@@ -6,7 +6,7 @@ class StoreController < ApplicationController
 
     @studyeggs.each do |s|
       egg = Studyegg.find_or_create_by_qb_studyegg_id(s['id'])
-      lesson_price = Lesson.find_or_create_by_id(s['chapters'][0]['id']).price
+      lesson_price = 0 #Lesson.find_or_create_by_id(s['chapters'][0]['id']).price
       s['rating'] = egg.total_score*1.0/egg.number_of_rates
       if egg.price == 0 or egg.price.nil?
         s['price'] = "Free"

@@ -1,5 +1,10 @@
 source :rubygems
 
+group :development do
+  gem 'guard'
+  gem 'guard-livereload'
+end
+
 group :test do
   gem 'sqlite3'
   gem 'turn', :require => false
