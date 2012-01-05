@@ -61,4 +61,18 @@ class Questionbase
     end
     return studyeggs
   end
+  
+  def self.get_userships(id)
+    url = URI.parse(STUDYEGG_PATH+"/show_userships/#{id}.json")
+    req = Net::HTTP::Get.new(url.path)
+    res = Net::HTTP.start(url.host, url.port) {|http|
+      http.request(req)
+    }
+    begin
+      lesson_ids = JSON.parse(res.body)
+    rescue
+      lesson_ids = []
+    end
+    return lesson_ids
+  end
 end
