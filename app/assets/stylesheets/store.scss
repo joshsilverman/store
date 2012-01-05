@@ -70,7 +70,7 @@
      margin-bottom:1em;
      
      h2{font-size: 28px; font-weight: normal; color: #444444; margin-bottom: 17px;}
-     h4{font-size: 17px; font-weight: normal; margin-bottom: 11px;}
+     h4{font-size: 17px; font-weight: normal; color: #737373; margin-bottom: 11px;}
     .egg_image {float:left;}
     .egg_info {float:left; margin: 0; width:100%; padding-top: 20px;}
     .egg_price {color: #b00000;}
@@ -84,12 +84,12 @@
 
       .title {
 /*        border-bottom: #E3E3E3 solid 1px;*/
-        background: E8E8E8;
+        background: D6D6D6;
         
         .header {
           font-size: 16px;
           padding:.62em;
-          color:#cf7006; 
+          color:#444; 
           display: block;
         }
       }
@@ -122,15 +122,15 @@
       }
       #title{
         width:200px; 
-        color:#cf7006; 
+        color:#808080; 
         font-size: 10px; 
         font-weight: normal; 
         text-align: left; 
         padding-left: 10px;
       }
-      #questions{width:100px; color:#cf7006; font-size: 10px; font-weight: normal; }
-      #price{width:50px; color:#cf7006; font-size: 10px; font-weight: normal; }
-      #buy{width:105px; color:#cf7006; font-size: 10px; font-weight: normal; }
+      #questions{width:100px; color:#808080; font-size: 10px; font-weight: normal; }
+      #price{width:50px; color:#808080; font-size: 10px; font-weight: normal; }
+      #buy{width:105px; color:#808080; font-size: 10px; font-weight: normal; }
       tr td.title_col{text-align: left; padding-left: 10px;}
     }
   }
@@ -138,7 +138,7 @@
   .aside {
     width:36%;
 /*    margin-top:69px;*/
-    margin-top:3em;
+    margin-top:64px;
     margin-left:2%;
     height:200px;
     float:right;
@@ -160,6 +160,8 @@
       line-height:1.62em;
       padding:1em;
       color:#444;
+      
+      p {padding:.32em 0;}
     }
   }
 }
