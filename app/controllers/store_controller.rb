@@ -34,6 +34,7 @@ class StoreController < ApplicationController
       @studyegg['price'] = "$"+sprintf("%.2f", egg.price*1.0/100).to_s
     end
     @studyegg['rating'] = egg.total_score*1.0/egg.number_of_rates
+    @studyegg['chapters'].sort!{|a,b| a['id'] <=> b['id']}
     
     @studyegg['chapters'].each do |ch|
       lesson_price = Lesson.find_or_create_by_qb_lesson_id(ch['id']).price

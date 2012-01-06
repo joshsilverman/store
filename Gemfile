@@ -1,8 +1,8 @@
 source :rubygems
 
 group :development do
-  gem 'guard'
-  gem 'guard-livereload'
+#  gem 'guard'
+#  gem 'guard-livereload'
 end
 
 group :test do

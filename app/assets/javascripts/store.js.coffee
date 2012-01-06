@@ -1,3 +1,14 @@
+class StoreButtons
+  constructor: ->
+    $('.lesson_action').on('click', @create_usership)
+    
+  create_usership: ->
+    id = $(this).attr('id')
+    $.getJSON("#{studyegg_path}/create_usership/#{id}?callback=?", (json, status) => 
+      if status == 'success'
+        $(this).html("<a href='"+studyegg_path+"/review/"+$(this).attr('id')+"'>Review Now!</a>")
+      )
+
 $ ->
     resizeContents = ->
         footer = $('#footer')
@@ -5,13 +16,9 @@ $ ->
         header = $('#header')
         
         footerY = footer.height()
-        console.log(footerY)
         contentsY = contents.height()
-        console.log(contentsY)
         headerY = header.height()
-        console.log(headerY)
         viewportY = $(window).height()
-        console.log(viewportY)
         
         difference = viewportY - footerY - headerY - 33;
 
@@ -23,4 +30,5 @@ $ ->
     #init
     init = ->
         resizeContents()
+        buttons = new StoreButtons()
     init()
