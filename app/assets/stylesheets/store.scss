@@ -100,40 +100,37 @@
       .lesson_action {
         a {
 
+          font-size: 16px; 
+          padding:.31em .62em;
+          margin:.31em .31em .31em 0;
+          
+          
           -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
           -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
           box-shadow:inset 0px 1px 0px 0px #ffffff;
-          background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #8bbbd9), color-stop(1, #218ed2) );
-          background:-moz-linear-gradient( center top, #8bbbd9 5%, #218ed2 100% );
-          filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#8bbbd9', endColorstr='#218ed2');
-          background-color:#8bbbd9;
+          background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #bde6ff), color-stop(1, #5cb8ed) );
+          background:-moz-linear-gradient( center top, #bde6ff 5%, #5cb8ed 100% );
+          filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#bde6ff', endColorstr='#5cb8ed');
+          background-color:#bde6ff;
           -moz-border-radius:6px;
           -webkit-border-radius:6px;
           border-radius:6px;
           border:1px solid #7fc0e3;
           display:inline-block;
-          color:#004570;
-          font-family:arial;
-
-          font-size: 16px; 
-          padding:.31em;
-          margin:.31em .31em .31em 0;
-          
+          color:#005387;
           text-decoration:none;
-          text-shadow:1px 1px 0px #d4efff;
+          text-shadow:1px 1px 0px #d6f0ff;
           
           &:hover {
-            background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #218ed2), color-stop(1, #8bbbd9) );
-            background:-moz-linear-gradient( center top, #218ed2 5%, #8bbbd9 100% );
-            filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#218ed2', endColorstr='#8bbbd9');
-            background-color:#218ed2;
+            background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #5cb8ed), color-stop(1, #bde6ff) );
+            background:-moz-linear-gradient( center top, #5cb8ed 5%, #bde6ff 100% );
+            filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#5cb8ed', endColorstr='#bde6ff');
+            background-color:#5cb8ed;
           }
-          
           &:active {
             position:relative;
             top:1px;
           }
-          
         }
       }
       
