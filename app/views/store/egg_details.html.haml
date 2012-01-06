@@ -27,7 +27,7 @@
           %tr.d0
             %td#title Title
             %td#questions= 'Questions'
-            %td#price Price
+            //%td#price Price
             %td#buy
           - i=0
           - unless @studyegg['chapters'].nil?
@@ -39,7 +39,7 @@
                 %tr.d1
                   %td.title_col= chapter['name']
                   %td= chapter['question_count']
-                  %td= chapter['lesson_price']
+                  //%td= chapter['lesson_price']
                   %td.lesson_action{:id => chapter['id']}
                     -if owned
                       %a{:href=>@studyegg_path+'/review/'+chapter['id'].to_s} Review Now!
@@ -49,7 +49,7 @@
                 %tr.d0
                   %td.title_col= chapter['name']
                   %td= chapter['question_count']
-                  %td= chapter['lesson_price']
+                  //%td= chapter['lesson_price']
                   %td.lesson_action{:id => chapter['id']}
                     -if owned
                       %a{:href=>@studyegg_path+'/review/'+chapter['id'].to_s} Review Now!
@@ -61,7 +61,7 @@
         Getting started...
       .body
         %p Find a chapter and click "Add to My Eggs."
-        %p Then, click "Review" to begin.
+        %p Then, click "Review Now" to begin.
   .cl
 
 %script{:type=>'text/javascript'}= "var studyegg_path = '#{@studyegg_path}'"
