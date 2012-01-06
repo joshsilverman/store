@@ -97,6 +97,46 @@
         }
       }
       
+      .lesson_action {
+        a {
+
+          -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+          -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+          box-shadow:inset 0px 1px 0px 0px #ffffff;
+          background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #8bbbd9), color-stop(1, #218ed2) );
+          background:-moz-linear-gradient( center top, #8bbbd9 5%, #218ed2 100% );
+          filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#8bbbd9', endColorstr='#218ed2');
+          background-color:#8bbbd9;
+          -moz-border-radius:6px;
+          -webkit-border-radius:6px;
+          border-radius:6px;
+          border:1px solid #7fc0e3;
+          display:inline-block;
+          color:#004570;
+          font-family:arial;
+
+          font-size: 16px; 
+          padding:.31em;
+          margin:.31em .31em .31em 0;
+          
+          text-decoration:none;
+          text-shadow:1px 1px 0px #d4efff;
+          
+          &:hover {
+            background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #218ed2), color-stop(1, #8bbbd9) );
+            background:-moz-linear-gradient( center top, #218ed2 5%, #8bbbd9 100% );
+            filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#218ed2', endColorstr='#8bbbd9');
+            background-color:#218ed2;
+          }
+          
+          &:active {
+            position:relative;
+            top:1px;
+          }
+          
+        }
+      }
+      
       .get_all_lessons {text-align:right; display: block; float:right;}
       .table_header {font-size: 12px; font-weight: bold; color:#cf7006; padding:3px 0}
     }
