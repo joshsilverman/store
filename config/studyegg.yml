@@ -1,9 +1,15 @@
 development:
-  domain: localhost
-  auth: http://localhost:3000
-  qb: http://localhost:3001
-  store: http://localhost:3002
-  studyegg: http://localhost:3003
+#  domain: localhost
+#  auth: http://localhost:3000
+#  qb: http://localhost:3001
+#  store: http://localhost:3002
+#  studyegg: http://localhost:3003
+
+  domain: .lvh.me
+  auth: http://lvh.me:3000
+  qb: http://lvh.me:3001
+  store: http://lvh.me:3002
+  studyegg: lvh.me:3003
 
 test:
   domain: localhost

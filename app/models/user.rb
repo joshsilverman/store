@@ -1,6 +1,6 @@
 class User
 
-  ATTRIBUTES = [:uid, :name, :nickname, :email, :first_name, :last_name]
+  ATTRIBUTES = [:uid, :name, :nickname, :email, :first_name, :last_name, :school]
   attr_accessor *ATTRIBUTES
 
   def initialize(attributes = {})

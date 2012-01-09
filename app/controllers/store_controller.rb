@@ -1,7 +1,13 @@
 class StoreController < ApplicationController
   before_filter :login_required, :except => ["index"]
   def index
-    puts "SESSIONS #{current_user.inspect}"
+    if current_user
+      @sub = (current_user.school.nil?) ? 'www' : current_user.school
+    elsif cookies[:sub]!='' or cookies[:sub].nil? 
+      @sub = cookies[:sub]
+    else
+      @sub = 'www'
+    end
     #eggs = Studyegg.select(:id).collect(&:id)
     @studyeggs = Questionbase.get_public
 
