@@ -6,7 +6,7 @@ class UserSessionsController < ApplicationController
   # Omniauth callback method
   def create
     session[:user] = User.from_omniauth(request.env['omniauth.auth'])
-
+    puts "CREATED USER: #{current_user}"
     flash[:notice] = "Successfully logged in"
     redirect_to root_path
   end
@@ -14,6 +14,7 @@ class UserSessionsController < ApplicationController
   # Omniauth failure callback
   def failure
     flash[:notice] = params[:message]
+    puts "FAILURE: #{params[:message]}"
     redirect_to root_path
   end
 

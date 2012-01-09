@@ -1,6 +1,7 @@
 class StoreController < ApplicationController
   before_filter :login_required, :except => ["index"]
   def index
+    puts "SESSIONS #{current_user.inspect}"
     #eggs = Studyegg.select(:id).collect(&:id)
     @studyeggs = Questionbase.get_public
 

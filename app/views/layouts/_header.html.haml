@@ -9,7 +9,9 @@
             %a.first.active{:href=>"#{STUDYEGG_STORE_PATH}"} Library
             %ul
               %li
-                %a.first.active{:href=>"#{STUDYEGG_USER_MANAGER_PATH}/users/sign_in"} Login
+                -sub = cookies[:sub]
+                -sub = '' if sub=='default' or sub.nil?
+                %a.first.active{:href=>"#{STUDYEGG_USER_MANAGER_PATH}/#{sub}"} Login
           -else
             %a.first.active{:href=>"#{STUDYEGG_PATH}"} My Eggs
             %a{:href=>"#{STUDYEGG_STORE_PATH}"} Library

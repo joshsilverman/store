@@ -5,7 +5,6 @@ raise "#{studyegg_config_file} is missing!" unless File.exists? studyegg_config_
 studyegg_config = YAML.load_file(studyegg_config_file)[Rails.env].symbolize_keys
 
 OauthClientDemo::Application.config.session_store :cookie_store, :key => '_studyegg', :domain => :all#, :domain => studyegg_config[:domain]
-
 # Use the database for sessions instead of the cookie-based default,
 # which shouldn't be used to store highly confidential information
 # (create the session table with "rails generate session_migration")
