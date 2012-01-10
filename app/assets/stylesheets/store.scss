@@ -2,11 +2,20 @@
   margin-right:-16px;
   .egg_container{ width:308px; float: left; margin:15px 20px 15px 1px; color:#606060; box-shadow: 0 1px 4px #aaa; border-radius: 3px;
       .title {padding:8px; background:#F8F8F8; border-bottom: 1px solid #EEE; height:35px; overflow:hidden;
-          h2 { font-weight:bold; color:#004B91;}
+          h4 {
+            font-weight: bold;
+            font-size: 10px;
+          }
+          h2 { 
+            font-weight:bold; 
+            color:#004B91;
+            font-size: 14px;
+            line-height:1em;
+          }
           h2:hover { text-decoration:underline; color:#C60;}
       }
       .egg_image{float:left;}
-      .egg_info{float:left; margin: 30px 0 0 15px;}
+      .egg_info{float:left; margin: 30px 0 0 15px; font-size:12px;}
       .egg_price{color: #b00000; font-weight: bold;}
       .review{margin-top:10px; margin-left: -10px;}
   }
@@ -73,7 +82,7 @@
      margin-bottom:1em;
      
      h2{font-size: 28px; font-weight: normal; color: #444444; margin-bottom: 17px;}
-     h4{font-size: 17px; font-weight: normal; color: #737373; margin-bottom: 11px;}
+     h4{font-size: 17px; font-weight: normal; color: #737373; margin-bottom: .32em;}
     .egg_image {float:left;}
     .egg_info {float:left; margin: 0; width:100%; padding-top: 20px;}
     .egg_price {color: #b00000;}
