@@ -17,4 +17,4 @@ production:
   auth: http://zendolabs.com
   qb: http://questionbase.zendolabs.com
   store: http://store.zendolabs.com
-  studyegg: http://www.zendolabs.com
+  studyegg: zendolabs.com
