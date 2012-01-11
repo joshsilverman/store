@@ -9,7 +9,7 @@
             %a.first.active{:href=>"#{STUDYEGG_STORE_PATH}"} Library
             %ul
               %li
-                %a.first.active{:href=>"#{STUDYEGG_USER_MANAGER_PATH}/users/sign_in"} Login
+                %a.first.active{:href=>"#{STUDYEGG_USER_MANAGER_PATH}"} Login
           -else
             -sub = (current_user.school.nil?) ? 'www' : current_user.school
             %a.first.active{:href=>"http://#{sub}.#{STUDYEGG_PATH}"} My Eggs
