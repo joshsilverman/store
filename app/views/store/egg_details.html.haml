@@ -42,7 +42,7 @@
                   //%td= chapter['lesson_price']
                   %td.lesson_action{:id => chapter['id']}
                     -if owned
-                      %a{:href=>@studyegg_path+'/review/'+chapter['id'].to_s} Review
+                      %a{:href=>'http://'+@school+'.'+@studyegg_path+'/review/'+chapter['id'].to_s} Review
                     -else
                       %img.get-it-now{:src => '/assets/get-it-now.png'}
               - else
