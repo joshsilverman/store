@@ -4,9 +4,9 @@ class StoreButtons
     
   create_usership: ->
     id = $(this).attr('id')
-    $.getJSON("#{studyegg_path}/create_usership/#{id}?callback=?", (json, status) => 
+    $.getJSON("http://www.#{studyegg_path}/create_usership/#{id}?callback=?", (json, status) => 
       if status == 'success'
-        $(this).html("<a href='"+studyegg_path+"/review/"+$(this).attr('id')+"'>Review</a>")
+        $(this).html("<a href='http://www."+studyegg_path+"/review/"+$(this).attr('id')+"'>Review</a>")
       )
 
 $ ->

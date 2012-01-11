@@ -63,7 +63,7 @@ class Questionbase
   end
   
   def self.get_userships(id)
-    url = URI.parse(STUDYEGG_PATH+"/show_userships/#{id}.json")
+    url = URI.parse("http://www.#{STUDYEGG_PATH}/show_userships/#{id}.json")
     req = Net::HTTP::Get.new(url.path)
     res = Net::HTTP.start(url.host, url.port) {|http|
       http.request(req)
