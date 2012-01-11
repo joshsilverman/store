@@ -22,7 +22,7 @@ class UserSessionsController < ApplicationController
   def destroy
     sub = (current_user.school.nil?) ? '' : current_user.school
     session[:user] = nil
-    cookie[:sub] = sub
+    cookies[:sub] = sub
 #    flash[:notice] = 'You have successfully signed out!'
     redirect_to "#{STUDYEGG_USER_MANAGER_PATH}/users/sign_out"
   end
