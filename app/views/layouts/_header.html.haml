@@ -1,9 +1,13 @@
+-if current_user.nil?
+  -sub = 'www'
+-else
+  -sub = (current_user.school.nil?) ? 'www' : current_user.school
 #header
   .shell
     #head
       .row-top
         %h1#logo
-          %a.notext{:href=>"#{STUDYEGG_STORE_PATH}"} Logo
+          %a.notext{:href=>"http://#{sub}.#{STUDYEGG_PATH}"} Logo
         .usernav
           -if current_user.nil?
             %a.first.active{:href=>"#{STUDYEGG_STORE_PATH}"} Library
@@ -11,7 +15,6 @@
               %li
                 %a.first.active{:href=>"#{STUDYEGG_USER_MANAGER_PATH}"} Login
           -else
-            -sub = (current_user.school.nil?) ? 'www' : current_user.school
             %a.first.active{:href=>"http://#{sub}.#{STUDYEGG_PATH}"} My Eggs
             %a{:href=>"#{STUDYEGG_STORE_PATH}"} Library
             %ul
