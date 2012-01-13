@@ -4,7 +4,12 @@ development:
   qb: http://qb.lvh.me:3001
   store: http://store.lvh.me:3002
   studyegg: lvh.me:3003
-
+#
+#  domain: localhost
+#  auth: http://localhost:3000
+#  qb: http://localhost:3001
+#  store: http://localhost:3002
+#  studyegg: localhost:3003
 test:
   domain: localhost
   auth: http://localhost:3000
