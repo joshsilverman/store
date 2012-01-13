@@ -4,7 +4,7 @@ development:
   qb: http://qb.lvh.me:3001
   store: http://store.lvh.me:3002
   studyegg: lvh.me:3003
-  
+
 test:
   domain: localhost
   auth: http://localhost:3000
@@ -13,8 +13,14 @@ test:
   studyegg: http://localhost:3003
 
 production:
-  domain: .zendolabs.com
-  auth: http://zendolabs.com
-  qb: http://questionbase.zendolabs.com
-  store: http://store.zendolabs.com
-  studyegg: zendolabs.com
+#  domain: .zendolabs.com
+#  auth: http://zendolabs.com
+#  qb: http://questionbase.zendolabs.com
+#  store: http://store.zendolabs.com
+#  studyegg: zendolabs.com
+
+  domain: .studyegg.com
+  auth: http://studyegg.com
+  qb: http://questionbase.studyegg.com
+  store: http://store.studyegg.com
+  studyegg: studyegg.com
