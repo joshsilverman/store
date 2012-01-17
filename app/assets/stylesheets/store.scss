@@ -135,12 +135,16 @@
             background:-moz-linear-gradient( center top, #5cb8ed 5%, #bde6ff 100% );
             filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#5cb8ed', endColorstr='#bde6ff');
             background-color:#5cb8ed;
+            cursor: pointer;
           }
           &:active {
             position:relative;
             top:1px;
           }
         }
+        &:hover {
+            cursor: pointer;
+          }
       }
       
       .get_all_lessons {text-align:right; display: block; float:right;}
